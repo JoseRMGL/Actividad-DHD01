@@ -1,0 +1,182 @@
+.grid {
+  display: grid;
+}
+
+nav {
+  margin-top: 40px;
+  font-size: 25px;
+
+  a {
+    color: black;
+    padding-right: 15px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-shadow: 1px 1px 1px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+  }
+}
+
+.container {
+  section {
+    border: 1px solid black;
+  }
+}
+
+article {
+  margin-bottom: 20px;
+}
+
+@for $i from 1 to 6 {
+  .columnas-#{$i} {
+    grid-template-columns: repeat($i, calc(100%/$i));
+  }
+}
+
+// Pagina 2
+
+@mixin cambio-de-color {
+  background-color: aqua;
+  font-size: 20px;
+  border: 1px solid black;
+}
+
+.container2 {
+  @include cambio-de-color();
+
+  section {
+    border: 1px solid black;
+  }
+}
+
+.container3 {
+  @extend .container2;
+  color: white;
+}
+
+// pagina 3
+
+@function calcular-tamanño-del-texto($tamano-base, $ancho) {
+  @return (calc($tamano-base / $ancho) * 100vw);
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.content {
+  padding: 20px;
+  font-size: calcular-tamanño-del-texto(16px, 1200px);
+  line-height: 1.6;
+}
+
+// pagina 4
+$tipo-usuario: "administrador";
+
+.cuerpo-pagina {
+  font-family: Arial, sans-serif;
+}
+
+.contenido {
+  padding: 20px;
+  border: 1px solid #ccc;
+
+  @if ($tipo-usuario =="administrador") {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  @else if ($tipo-usuario =="editor") {
+    background-color: #f0dc82;
+    color: #333;
+  }
+
+  @else {
+    background-color: #fff;
+    color: #333;
+  }
+}
+
+// Pagina 5
+
+$total-boxes: 3;
+
+@for $i from 1 through $total-boxes {
+  .boxes:nth-child(#{$i}) {
+    $size: 100px + $i * 20px;
+    width: $size;
+    height: $size;
+    margin-bottom: 20px;
+  }
+}
+
+$colors: (
+  "red",
+  "green",
+  "blue",
+  "yellow"
+);
+
+.color-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+
+  .color-item {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+  }
+}
+
+@each $color in $colors {
+  .color-#{$color} {
+    background-color: #{$color};
+  }
+}
+
+$number: 1;
+$colors: (
+  #ff0000,
+  #00ff00,
+  #0000ff,
+  #ffff00,
+  #ff00ff
+);
+
+.contenedor {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.caja {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+@while $number <=length($colors) {
+  .caja-#{$number} {
+    background-color: nth($colors, $number);
+  }
+
+  $number: $number + 1;
+}

@@ -1,0 +1,173 @@
+.grid {
+  display: grid;
+}
+
+nav {
+  margin-top: 40px;
+  font-size: 25px;
+}
+nav a {
+  color: black;
+  padding-right: 15px;
+  text-decoration: none;
+}
+nav a:hover {
+  text-shadow: 1px 1px 1px;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.container section {
+  border: 1px solid black;
+}
+
+article {
+  margin-bottom: 20px;
+}
+
+.columnas-1 {
+  grid-template-columns: repeat(1, 100%);
+}
+
+.columnas-2 {
+  grid-template-columns: repeat(2, 50%);
+}
+
+.columnas-3 {
+  grid-template-columns: repeat(3, 33.3333333333%);
+}
+
+.columnas-4 {
+  grid-template-columns: repeat(4, 25%);
+}
+
+.columnas-5 {
+  grid-template-columns: repeat(5, 20%);
+}
+
+.container2, .container3 {
+  background-color: aqua;
+  font-size: 20px;
+  border: 1px solid black;
+}
+.container2 section, .container3 section {
+  border: 1px solid black;
+}
+
+.container3 {
+  color: white;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.content {
+  padding: 20px;
+  font-size: 1.3333333333vw;
+  line-height: 1.6;
+}
+
+.cuerpo-pagina {
+  font-family: Arial, sans-serif;
+}
+
+.contenido {
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.boxes:nth-child(1) {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+.boxes:nth-child(2) {
+  width: 140px;
+  height: 140px;
+  margin-bottom: 20px;
+}
+
+.boxes:nth-child(3) {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 20px;
+}
+
+.color-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+.color-list .color-item {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.color-red {
+  background-color: red;
+}
+
+.color-green {
+  background-color: green;
+}
+
+.color-blue {
+  background-color: blue;
+}
+
+.color-yellow {
+  background-color: yellow;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.caja {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.caja-1 {
+  background-color: #ff0000;
+}
+
+.caja-2 {
+  background-color: #00ff00;
+}
+
+.caja-3 {
+  background-color: #0000ff;
+}
+
+.caja-4 {
+  background-color: #ffff00;
+}
+
+.caja-5 {
+  background-color: #ff00ff;
+}
+
+/*# sourceMappingURL=estilos.css.map */
